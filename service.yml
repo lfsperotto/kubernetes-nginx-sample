@@ -1,0 +1,10 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx-sample
+  namespace: nginx-sample
+spec:
+  selector:
+    app: nginx-sample
+  ports:
+    - port: 80
