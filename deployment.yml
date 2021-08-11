@@ -5,6 +5,7 @@ metadata:
   namespace: nginx-sample
   labels:
     app: nginx-sample
+    app.kubernetes.io/name: nginx-sample
 spec:
   replicas: 1
   selector:
@@ -14,9 +15,13 @@ spec:
     metadata:
       labels:
         app: nginx-sample
+      annotations:
+        kubernetes.io/change-cause: 'New deployment'
     spec:
       containers:
       - name: nginx
         image: nginx
         ports:
         - containerPort: 80
+  strategy:
+    type: RollingUpdate

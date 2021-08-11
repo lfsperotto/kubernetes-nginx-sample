@@ -1,1 +1,1 @@
-# kubernetes-nginx-sample
+# Kubernetes simple Nginx deployment
